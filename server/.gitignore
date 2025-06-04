@@ -1,0 +1,23 @@
+# JetBrains IDE klasörleri
+.idea/
+*.iml
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node.js
+node_modules/
+
+# Log dosyaları
+logs/
+*.log
+
+# Derleme çıktı klasörleri (örneğin build/ veya dist/)
+dist/
+build/
+
+# Ortam değişkenleri dosyası
+server/.env
