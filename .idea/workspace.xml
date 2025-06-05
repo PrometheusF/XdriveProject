@@ -14,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -51,9 +51,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Deniz Utku\WebstormProjects\untitled2\assets\images" />
       <recent name="C:\Users\Deniz Utku\WebstormProjects\untitled2" />
       <recent name="C:\Users\Deniz Utku\WebstormProjects\untitled2\project-folder" />
-      <recent name="C:\Users\Deniz Utku\WebstormProjects\untitled2\assets\images" />
       <recent name="C:\Users\Deniz Utku\WebstormProjects\untitled2\assets" />
       <recent name="C:\Users\Deniz Utku\WebstormProjects\untitled2\" />
     </key>
@@ -84,7 +84,13 @@
       <workItem from="1749059386007" duration="87000" />
       <workItem from="1749063978813" duration="545000" />
       <workItem from="1749064532818" duration="1591000" />
-      <workItem from="1749078941013" duration="632000" />
+      <workItem from="1749078941013" duration="1047000" />
+      <workItem from="1749128827911" duration="317000" />
+      <workItem from="1749133087742" duration="192000" />
+      <workItem from="1749133543888" duration="93000" />
+      <workItem from="1749134052507" duration="2981000" />
+      <workItem from="1749137086021" duration="1022000" />
+      <workItem from="1749156520629" duration="1187000" />
     </task>
     <servers />
   </component>

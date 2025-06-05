@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XDrive – Rent a Car</title>
+
+    <!-- Google Fonts (Poppins + Lato) -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- Font Awesome (icons) -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-dNmNtMlB31Mh4tC7YV17UQIj+mFZFM8hs2xRFbU61GPHK6qlzLx24eVQiInqN9AjWJZtxElRA7Hl1W5v+EBmvA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<!-- ============================
+     HEADER / NAVIGATION BAR
+============================ -->
+<header class="header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="../assets/images/xdrivelogo.png" alt="XDrive Logo" class="logo-img" />
+            <span class="logo-text">XDrive</span>
+        </a>
+
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="rent.html" class="active">Rent a Car</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-shopping-cart"></i>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </div>
+</header>
+
+<!-- ============================
+     RENT A CAR SECTION
+============================ -->
+<main style="margin-top: 80px;">
+    <section class="rent" id="rent">
+        <div class="container">
+            <h2 class="section-title" data-anim="fade-up">Rent a Car</h2>
+            <p
+                    data-anim="fade-up"
+                    style="color: var(--color-gray-dark); margin-bottom: var(--spacer-lg);"
+            >
+                Choose from our premium fleet of vehicles. View hourly/daily rates,
+                per km charges, and full technical specifications before booking.
+            </p>
+
+            <!-- Araçlar için ızgara düzeni -->
+            <div
+                    class="rent-grid"
+                    data-anim="fade-up"
+                    style="display: grid; gap: var(--spacer-lg); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));"
+            >
+                <!-- ===== CAR CARD #1: Toyota Prius Hybrid ===== -->
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="../assets/images/prius.jpg" alt="Toyota Prius Hybrid" />
+                    </div>
+                    <div class="card-content">
+                        <h3>Toyota Prius Hybrid</h3>
+
+                        <!-- Pricing Details -->
+                        <ul style="margin-bottom: var(--spacer-md); color: var(--color-gray-dark);">
+                            <li><strong>Hourly Rate:</strong> $10 / hour</li>
+                            <li><strong>Daily Rate:</strong> $60 / day</li>
+                            <li><strong>Per km Charge:</strong> $0.20 / km</li>
+                        </ul>
+
+                        <!-- Technical Specifications -->
+                        <details style="margin-bottom: var(--spacer-md);">
+                            <summary
+                                    style="font-weight: 600; cursor: pointer; color: var(--color-primary);"
+                            >
+                                View Technical Specifications
+                            </summary>
+                            <table
+                                    style="width: 100%; margin-top: var(--spacer-xs); border-collapse: collapse; color: var(--color-gray-dark);"
+                            >
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Engine</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        1.8L Atkinson Inline-4 + Electric Motor
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Transmission</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        CVT (Continuously Variable Transmission)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Seats</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Fuel Type</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        Hybrid (Petrol + Electric)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Fuel Efficiency</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        ~4.5 L/100 km (combined)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Air Conditioning</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        Yes
+                                    </td>
+                                </tr>
+                            </table>
+                        </details>
+
+                        <!-- Burada Book Now linkini booking.html?car=ToyotaPriusHybrid şeklinde günceliyoruz -->
+                        <a href="booking.html?car=ToyotaPriusHybrid" class="btn btn-primary">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ===== CAR CARD #2: Skoda Fabia (Black) ===== -->
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="../assets/images/fabia black.jpg" alt="Skoda Fabia Black" />
+                    </div>
+                    <div class="card-content">
+                        <h3>Skoda Fabia (Black)</h3>
+
+                        <!-- Pricing Details -->
+                        <ul style="margin-bottom: var(--spacer-md); color: var(--color-gray-dark);">
+                            <li><strong>Hourly Rate:</strong> $15 / hour</li>
+                            <li><strong>Daily Rate:</strong> $90 / day</li>
+                            <li><strong>Per km Charge:</strong> $0.25 / km</li>
+                        </ul>
+
+                        <!-- Technical Specifications -->
+                        <details style="margin-bottom: var(--spacer-md);">
+                            <summary
+                                    style="font-weight: 600; cursor: pointer; color: var(--color-primary);"
+                            >
+                                View Technical Specifications
+                            </summary>
+                            <table
+                                    style="width: 100%; margin-top: var(--spacer-xs); border-collapse: collapse; color: var(--color-gray-dark);"
+                            >
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Engine</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        1.2 L TSI Turbocharged Inline-4 (90 hp)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Transmission</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        5-Speed Manual (DSG optional)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Seats</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Fuel Type</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        Petrol
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Fuel Efficiency</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        ~5.2 L/100 km (combined)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Air Conditioning</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        Yes
+                                    </td>
+                                </tr>
+                            </table>
+                        </details>
+
+                        <!-- Burada Book Now linkini booking.html?car=SkodaFabiaBlack şeklinde günceliyoruz -->
+                        <a href="booking.html?car=SkodaFabiaBlack" class="btn btn-primary">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ===== CAR CARD #3: Skoda Fabia (Red) ===== -->
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="../assets/images/fabia red.jpg" alt="Skoda Fabia Red" />
+                    </div>
+                    <div class="card-content">
+                        <h3>Skoda Fabia (Red)</h3>
+
+                        <!-- Pricing Details -->
+                        <ul style="margin-bottom: var(--spacer-md); color: var(--color-gray-dark);">
+                            <li><strong>Hourly Rate:</strong> $12 / hour</li>
+                            <li><strong>Daily Rate:</strong> $75 / day</li>
+                            <li><strong>Per km Charge:</strong> $0.30 / km</li>
+                        </ul>
+
+                        <!-- Technical Specifications -->
+                        <details style="margin-bottom: var(--spacer-md);">
+                            <summary
+                                    style="font-weight: 600; cursor: pointer; color: var(--color-primary);"
+                            >
+                                View Technical Specifications
+                            </summary>
+                            <table
+                                    style="width: 100%; margin-top: var(--spacer-xs); border-collapse: collapse; color: var(--color-gray-dark);"
+                            >
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Engine</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        1.0 L TSI Turbocharged Inline-3 (95 hp)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Transmission</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        5-Speed Manual (DSG optional)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Seats</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Fuel Type</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        Petrol
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Fuel Efficiency</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        ~5.0 L/100 km (combined)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        <strong>Trunk Capacity</strong>
+                                    </td>
+                                    <td style="padding: var(--spacer-xxs); border: 1px solid var(--color-gray-medium);">
+                                        330 L
+                                    </td>
+                                </tr>
+                            </table>
+                        </details>
+
+                        <!-- Burada Book Now linkini booking.html?car=SkodaFabiaRed şeklinde günceliyoruz -->
+                        <a href="booking.html?car=SkodaFabiaRed" class="btn btn-primary">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+                <!-- İsterseniz buraya ek araç kartları ekleyebilirsiniz. -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============================
+     TOAST NOTIFICATION (Hidden by default)
+============================ -->
+<div id="success-message">Your message has been successfully sent!</div>
+
+<!-- ============================
+     FOOTER
+============================ -->
+<footer class="footer">
+    <div class="container footer-container">
+        <p>&copy; 2025 XDrive. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="rent.html">Rent a Car</a>
+            <a href="booking.html">Booking</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================
+     JAVASCRIPT: Harici main.js Dosyasını Çağır
+============================ -->
+<script src="../js/main.js"></script>
+</body>
+</html>

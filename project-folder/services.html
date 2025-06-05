@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XDrive – Services</title>
+
+  <!-- Google Fonts -->
+  <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
+          rel="stylesheet"
+  />
+
+  <!-- Font Awesome (ikonlar için) -->
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          integrity="sha512-dNmNtMlB31Mh4tC7YV17UQIj+mFZFM8hs2xRFbU61GPHK6qlzLx24eVQiInqN9AjWJZtxElRA7Hl1W5v+EBmvA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+  />
+
+  <!-- Ana stil -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<!-- ===== HEADER / NAVBAR ===== -->
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="../assets/images/xdrivelogo.png" alt="XDrive Logo" class="logo-img" />
+      <span class="logo-text">XDrive</span>
+    </a>
+
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="rent.html">Rent a Car</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-icons">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-shopping-cart"></i>
+      <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== SERVICES SECTION ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title" data-anim="fade-up">Our Services</h2>
+    <div class="services-grid">
+      <!-- Service Card 1: Taxi Service -->
+      <div class="service-card" data-anim="zoom-in">
+        <div class="card-image">
+          <img src="../assets/images/taxiservice.png" alt="Taxi Service" />
+        </div>
+        <div class="card-content">
+          <h3>Taxi Service</h3>
+          <p>
+            24/7 taxi fleet for safe and reliable rides within and between cities.
+            Book online or call us anytime.
+          </p>
+          <a href="contact.html" class="btn btn-secondary">Book a Taxi</a>
+        </div>
+      </div>
+
+      <!-- Service Card 2: Car Rental -->
+      <div class="service-card" data-anim="zoom-in" data-delay="100">
+        <div class="card-image">
+          <img src="../assets/images/carrental.png" alt="Car Rental" />
+        </div>
+        <div class="card-content">
+          <h3>Car Rental</h3>
+          <p>
+            Daily, weekly, or monthly car rentals at competitive rates.
+            Economy sedans, SUVs, and minibuses available.
+          </p>
+          <!-- Eskiden contact.html’di, şimdi direkt rent.html’e yönlendiriyoruz -->
+          <a href="rent.html" class="btn btn-secondary">Rent a Car</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-container">
+    <p>&copy; 2025 XDrive. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="rent.html">Rent a Car</a>
+      <a href="booking.html">Booking</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script src="../js/main.js"></script>
+</body>
+</html>

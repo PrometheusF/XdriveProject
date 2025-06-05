@@ -1,5 +1,6 @@
 /* ==========================================================================
    style.css — Modern & Professional Taxi/Car Rental Theme (XDrive)
+   (GÜNCELLENMİŞ SÜRÜM)
    ========================================================================== */
 
 /* ==========================================================================
@@ -73,6 +74,11 @@ body {
     color: var(--color-black);
     background-color: var(--color-gray-light);
     overflow-x: hidden;
+
+    /* ----------------------------------------------------------------------
+       HEADER ALTINDAKİ İÇERİĞİN GÖRÜNMESİ İÇİN 80px ÜST BOŞLUK (padding-top) EKLENDİ
+       ---------------------------------------------------------------------- */
+    padding-top: 80px;
 }
 
 a {
@@ -204,7 +210,7 @@ button {
 }
 
 .logo-img {
-    height: 48px; /* Bir miktar büyüterek öne çıkardık */
+    height: 56px; /* 48px yerine 56px yaptık, logoyu biraz daha büyüttük */
     width: auto;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
@@ -228,6 +234,7 @@ button {
     gap: var(--spacer-lg);
 }
 
+/* “active” link altı kırmızı çizgiyle daha net görülsün */
 .nav-links li a {
     position: relative;
     font-size: var(--font-size-md);
@@ -289,7 +296,7 @@ button {
     margin-top: 80px; /* Header yüksekliği */
     position: relative;
     height: calc(100vh - 80px);
-    background: url('../assets/images/carkey.jpg') center/cover no-repeat fixed;
+    background: url('../assets/images/carkey.png') center/cover no-repeat fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -529,7 +536,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacer-xs);
+    gap: var(--spacer-xxs);
 }
 
 .contact-info i {
@@ -555,18 +562,22 @@ button {
     color: var(--color-gray-dark);
 }
 
+/* “input, textarea ve select” stilleri birleştirildi */
 .contact-form .form-group input,
-.contact-form .form-group textarea {
+.contact-form .form-group textarea,
+.contact-form .form-group select {
     width: 100%;
     padding: var(--spacer-xs) var(--spacer-sm);
     border: 1px solid var(--color-gray-medium);
     border-radius: var(--radius-sm);
     font-size: var(--font-size-md);
+    background-color: #fff;
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .contact-form .form-group input:focus,
-.contact-form .form-group textarea:focus {
+.contact-form .form-group textarea:focus,
+.contact-form .form-group select:focus {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
@@ -592,10 +603,19 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* Card stili; service-card, card-image, card-content zaten yukarıda tanımlı */
+/* Kart stilleri zaten yukarıda tanımlandı (service-card, card-image, card-content) */
 
 /* ==========================================================================
-   11. TOAST NOTIFICATION (contact & rent sayfaları için)
+   11. BOOKING PAGE (booking.html)
+   ========================================================================== */
+/* Booking sayfasında form’u biraz daha daraltmak için kontak form stilini kullanıyoruz */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   12. TOAST NOTIFICATION (contact & rent & booking sayfaları için)
    ========================================================================== */
 #success-message {
     display: none;
@@ -621,7 +641,7 @@ button {
 }
 
 /* ==========================================================================
-   12. FOOTER
+   13. FOOTER
    ========================================================================== */
 .footer {
     background-color: var(--color-black);
@@ -655,7 +675,7 @@ button {
 }
 
 /* ==========================================================================
-   13. RESPONSIVE MEDIA QUERIES
+   14. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 
 /* Desktop > 1200px */
