@@ -12,26 +12,36 @@
 </head>
 <body>
 <header class="header">
-    <div class="container header-container">
+    <div class="container">
+        <!-- Logo -->
         <a href="index.html" class="logo">
-            <img src="../assets/images/xdrivelogo.png" alt="XDrive Logo" class="logo-img"/>
+            <img src="../assets/images/xdrivelogo.png" alt="XDrive Logo" class="logo-img" />
             <span class="logo-text">XDrive</span>
         </a>
-        <nav class="navbar">
+
+        <!-- Hamburger Menü Butonu -->
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar" id="navbar">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="rent.html" class="active">Rent a Car</a></li>
+                <li><a href="booking.html">Booking</a></li>
+
             </ul>
         </nav>
+
+        <!-- Dark Mode Butonu -->
         <div class="header-icons">
-            <i class="fas fa-search"></i>
-            <i class="fas fa-shopping-cart"></i>
-            <div id="menu-btn" class="fas fa-bars"></div>
+            <button id="theme-toggle" title="Toggle light/dark mode">🌙</button>
         </div>
     </div>
 </header>
+
+
 
 <main style="margin-top: 5px;">
     <section class="rent" id="rent">
