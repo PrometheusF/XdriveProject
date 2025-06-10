@@ -5,32 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XDrive – Book a Car</title>
 
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-dNmNtMlB31Mh4tC7YV17UQIj+mFZFM8hs2xRFbU61GPHK6qlzLx24eVQiInqN9AjWJZtxElRA7Hl1W5v+EBmvA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
 <header class="header">
   <div class="container">
+    <!-- Logo -->
     <a href="index.html" class="logo">
       <img src="../assets/images/xdrivelogo.png" alt="XDrive Logo" class="logo-img" />
       <span class="logo-text">XDrive</span>
     </a>
-    <nav class="navbar">
+
+    <!-- Hamburger Menü Butonu -->
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="rent.html">Rent a Car</a></li>
-        <li><a href="booking.html" class="active">Book a Car</a></li>
+        <li><a href="booking.html" class="active">Booking</a></li>
       </ul>
     </nav>
+
+    <!-- Dark Mode Butonu -->
     <div class="header-icons">
-      <i class="fas fa-search"></i>
-      <i class="fas fa-shopping-cart"></i>
-      <div id="menu-btn" class="fas fa-bars"></div>
+      <button id="theme-toggle" title="Toggle light/dark mode">🌙</button>
     </div>
   </div>
 </header>
@@ -46,8 +55,7 @@
         <form id="bookingForm" action="#" method="POST">
           <div class="form-group">
             <label for="selectedCar">Selected Car</label>
-            <select id="selectedCar" name="selectedCar" required
-                    style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);background:#fff;">
+            <select id="selectedCar" name="selectedCar" required>
               <option value="" disabled selected>-- Choose a car --</option>
               <option value="Toyota Prius Hybrid">Toyota Prius Hybrid</option>
               <option value="Skoda Fabia (Black)">Skoda Fabia (Black)</option>
@@ -56,28 +64,23 @@
           </div>
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your Full Name"
-                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
+            <input type="text" id="name" name="name" required placeholder="Your Full Name" />
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com"
-                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
           </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567"
-                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
+            <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567" />
           </div>
           <div class="form-group">
             <label for="pickupDate">Pick-up Date & Time</label>
-            <input type="datetime-local" id="pickupDate" name="pickupDate" required
-                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
+            <input type="datetime-local" id="pickupDate" name="pickupDate" required />
           </div>
           <div class="form-group">
             <label for="dropoffDate">Drop-off Date & Time</label>
-            <input type="datetime-local" id="dropoffDate" name="dropoffDate" required
-                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
+            <input type="datetime-local" id="dropoffDate" name="dropoffDate" required />
           </div>
           <button type="submit" class="btn btn-primary">Confirm Booking</button>
         </form>
@@ -86,8 +89,10 @@
   </section>
 </main>
 
+<!-- Toast Message -->
 <div id="success-message">Booking confirmed!</div>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container footer-container">
     <p>&copy; 2025 XDrive. All rights reserved.</p>
@@ -101,6 +106,7 @@
   </div>
 </footer>
 
+<!-- Scripts -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("bookingForm");
@@ -114,3 +120,6 @@
     });
   });
 </script>
+<script src="../js/main.js"></script>
+</body>
+</html>
