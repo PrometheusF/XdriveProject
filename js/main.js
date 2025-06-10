@@ -82,3 +82,22 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     });
 });
+
+// ==== 4. Back to Top Butonu ====
+// Sayfa 300px’den fazla kaydırıldığında butonu göster/gizle & tıklanınca yukarı kaydır
+document.addEventListener("DOMContentLoaded", () => {
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (!backToTopBtn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
