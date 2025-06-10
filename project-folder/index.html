@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>XDrive – Home</title>
 
   <!-- Google Fonts -->
@@ -11,27 +11,26 @@
           rel="stylesheet"
   />
 
-  <!-- Font Awesome (ikonlar için) -->
+  <!-- Font Awesome (Doğru SRI hash ile) -->
   <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-          integrity="sha512-dNmNtMlB31Mh4tC7YV17UQIj+mFZFM8hs2xRFbU61GPHK6qlzLx24eVQiInqN9AjWJZtxElRA7Hl1W5v+EBmvA=="
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer"
   />
 
   <!-- Ana stil -->
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
-<!-- ===== HEADER / NAVIGATION BAR ===== -->
+<!-- ===== HEADER ===== -->
 <header class="header">
   <div class="container">
     <a href="index.html" class="logo">
-      <img src="../assets/images/xdrivelogo.png" alt="XDrive Logo" class="logo-img" />
+      <img src="../assets/images/xdrivelogo.png" alt="XDrive Logo" class="logo-img"/>
       <span class="logo-text">XDrive</span>
     </a>
-
     <nav class="navbar">
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
@@ -40,10 +39,7 @@
         <li><a href="rent.html">Rent a Car</a></li>
       </ul>
     </nav>
-
     <div class="header-icons">
-      <i class="fas fa-search"></i>
-      <i class="fas fa-shopping-cart"></i>
       <div id="menu-btn" class="fas fa-bars"></div>
     </div>
   </div>
@@ -57,9 +53,7 @@
       <p>24/7 Taxi &amp; Car Rental Services with Professional Drivers and a Reliable Fleet.</p>
       <a href="services.html" class="btn">Explore Our Services</a>
     </div>
-    <div class="home-image" data-anim="fade-up">
-      <!-- Arka plan zaten CSS’te ayarlandı -->
-    </div>
+    <div class="home-image" data-anim="fade-up"></div>
   </div>
 </section>
 
@@ -67,7 +61,7 @@
 <section class="about" id="about">
   <div class="about-content container">
     <div class="about-image" data-anim="fade-left">
-      <img src="../assets/images/car-rental-new.png" alt="Car Rental" />
+      <img src="../assets/images/car-rental-new.png" alt="Car Rental"/>
     </div>
     <div class="about-text" data-anim="fade-right">
       <h2>About Us</h2>
@@ -78,24 +72,20 @@
   </div>
 </section>
 
-<!-- ===== SERVICES PREVIEW (Ana Sayfa) ===== -->
+<!-- ===== SERVICES PREVIEW ===== -->
 <section class="services-preview" id="services">
   <div class="container">
     <h2 class="section-title" data-anim="fade-up">Our Services</h2>
-    <p data-anim="fade-up">
-      We provide 24/7 taxi service and flexible car rental options. Click below to see full details.
-    </p>
+    <p data-anim="fade-up">We provide 24/7 taxi service and flexible car rental options. Click below to see full details.</p>
     <a href="services.html" class="btn" data-anim="fade-up">Browse All Services</a>
   </div>
 </section>
 
-<!-- ===== CONTACT PREVIEW (Ana Sayfa) ===== -->
+<!-- ===== CONTACT PREVIEW ===== -->
 <section class="contact" id="contact">
   <div class="container">
     <h2 class="section-title" data-anim="fade-up">Contact Us</h2>
-    <p data-anim="fade-up">
-      Have questions or need to book immediately? Reach out to us any time!
-    </p>
+    <p data-anim="fade-up">Have questions or need to book immediately? Reach out to us any time!</p>
     <div class="contact-info" data-anim="fade-up">
       <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +48 (729) 359-815</p>
       <p><i class="fas fa-envelope"></i> <strong>Email:</strong> infoxdrive2025@gmail.com</p>
@@ -119,7 +109,11 @@
   </div>
 </footer>
 
-<!-- ===== JAVASCRIPT ===== -->
+<!-- Back to Top Button -->
+<button id="back-to-top" title="Sayfanın başına dön">
+</button>
+
+<!-- JS -->
 <script src="../js/main.js"></script>
 </body>
 </html>
