@@ -605,3 +605,104 @@ button {
         gap: var(--spacer-xxs);
     }
 }
+
+/* === Dark Mode Değişkenleri === */
+body.dark-mode {
+    --color-black: #f1f1f1;
+    --color-gray-light: #1e1e1e;
+    --color-gray-medium: #444;
+    --color-gray-dark: #ccc;
+    --shadow-light: 0 2px 8px rgba(255,255,255,0.05);
+    --shadow-medium: 0 4px 16px rgba(255,255,255,0.1);
+    --shadow-heavy: 0 8px 32px rgba(255,255,255,0.2);
+    background-color: var(--color-gray-light);
+    color: var(--color-black);
+}
+
+body.dark-mode .header {
+    background-color: rgba(30,30,30,0.9);
+}
+
+body.dark-mode .footer {
+    background-color: #000;
+    color: #eee;
+}
+
+body.dark-mode .btn-secondary {
+    border-color: var(--color-gray-dark);
+    color: var(--color-gray-dark);
+}
+body.dark-mode .btn-secondary:hover {
+    background: var(--color-gray-dark);
+    color: var(--color-gray-light);
+}
+
+body.dark-mode .contact-form {
+    background-color: #2a2a2a;
+}
+
+#theme-toggle {
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-gray-dark);
+    transition: color 0.3s;
+}
+body.dark-mode #theme-toggle {
+    color: var(--color-gray-dark);
+}
+body.dark-mode .home-container,
+body.dark-mode .home-container h1,
+body.dark-mode .home-container p {
+    color: #f1f1f1;
+}
+
+/* === Mobil Hamburger Menü === */
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 70vh;
+        background: var(--color-gray-light);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease-in-out;
+        z-index: 1001;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: var(--spacer-md);
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    .header-icons {
+        display: none;
+    }
+}
+
+
+/* === Dark Mode: Navbar ve Yazılar === */
+body.dark-mode .nav-links li a {
+    color: #f1f1f1;
+}
+body.dark-mode .nav-links li a:hover,
+body.dark-mode .nav-links li a.active {
+    color: var(--color-primary);
+}
+body.dark-mode .home-container,
+body.dark-mode .home-container h1,
+body.dark-mode .home-container p {
+    color: #f1f1f1;
+}
