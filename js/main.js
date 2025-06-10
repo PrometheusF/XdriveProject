@@ -1,16 +1,16 @@
 // ==== 1. Mobil Menü Toggle ====
-const menuBtn = document.getElementById("menu-btn");
-const navbar = document.querySelector(".navbar");
+document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const navbar = document.getElementById("navbar"); // .navbar yerine id varsa daha güvenli
 
-if (menuBtn) {
-    menuBtn.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-    });
-}
+    if (menuBtn && navbar) {
+        menuBtn.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+        });
+    }
+});
 
 // ==== 2. Scroll-Reveal Animasyonları ====
-// Herhangi bir [data-anim] nitelikli öğeyi izleyip ekrana gelince .revealed sınıfı vererek
-// CSS animasyonlarını tetikliyoruz
 document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll("[data-anim]");
     const observerOptions = {
@@ -37,17 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==== 3. Contact + Rent Form Gönderimi ve Toast Bildirimi ====
-// Sadece contact.html ve rent.html sayfalarında “contactForm” id’li bir form varsa bu kod çalışacak
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contactForm");
     const successMessage = document.getElementById("success-message");
 
-    if (!form) return; // Eğer form yoksa hiçbir şey yapma
+    if (!form) return;
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        // Form verilerini topla
         const formData = new FormData(form);
         const data = {
             name: formData.get("name"),
@@ -55,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
             message: formData.get("message"),
         };
 
-        // `/send-email` rotasına JSON POST isteği gönder
         fetch("http://localhost:5000/send-email", {
             method: "POST",
             headers: {
@@ -66,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then((response) => response.json())
             .then((result) => {
                 if (result.success) {
-                    // Başarılı bildirim göstermek için #success-message id’li div’e .show ekle
                     successMessage.classList.add("show");
                     setTimeout(() => {
                         successMessage.classList.remove("show");
@@ -84,20 +80,44 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==== 4. Back to Top Butonu ====
-// Sayfa 300px’den fazla kaydırıldığında butonu göster/gizle & tıklanınca yukarı kaydır
 document.addEventListener("DOMContentLoaded", () => {
-    const backToTopBtn = document.getElementById('back-to-top');
+    const backToTopBtn = document.getElementById("back-to-top");
+
     if (!backToTopBtn) return;
 
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopBtn.style.display = 'block';
-        } else {
-            backToTopBtn.style.display = 'none';
-        }
+    window.addEventListener("scroll", () => {
+        backToTopBtn.style.display = window.pageYOffset > 300 ? "block" : "none";
     });
 
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
+
+// ==== 5. Light/Dark Mode Toggle + Tercih Kaydı ====
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("theme-toggle");
+
+    if (!toggleBtn) return;
+
+    // Sayfa yüklendiğinde mevcut tema uygulanır
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+    } else {
+        toggleBtn.textContent = "🌙";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        }
     });
 });
