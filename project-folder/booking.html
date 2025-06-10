@@ -5,33 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XDrive – Book a Car</title>
 
-  <!-- Google Fonts -->
-  <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
-          rel="stylesheet"
-  />
-
-  <!-- Font Awesome (ikonlar için) -->
-  <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-          integrity="sha512-dNmNtMlB31Mh4tC7YV17UQIj+mFZFM8hs2xRFbU61GPHK6qlzLx24eVQiInqN9AjWJZtxElRA7Hl1W5v+EBmvA=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-  />
-
-  <!-- Ana stil -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-dNmNtMlB31Mh4tC7YV17UQIj+mFZFM8hs2xRFbU61GPHK6qlzLx24eVQiInqN9AjWJZtxElRA7Hl1W5v+EBmvA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-<!-- ===== HEADER / NAVBAR ===== -->
 <header class="header">
   <div class="container">
     <a href="index.html" class="logo">
       <img src="../assets/images/xdrivelogo.png" alt="XDrive Logo" class="logo-img" />
       <span class="logo-text">XDrive</span>
     </a>
-
     <nav class="navbar">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -41,7 +27,6 @@
         <li><a href="booking.html" class="active">Book a Car</a></li>
       </ul>
     </nav>
-
     <div class="header-icons">
       <i class="fas fa-search"></i>
       <i class="fas fa-shopping-cart"></i>
@@ -50,7 +35,6 @@
   </div>
 </header>
 
-<!-- ===== BOOKING FORM SECTION ===== -->
 <main style="margin-top: 80px;">
   <section class="contact" id="booking">
     <div class="container contact-container">
@@ -58,139 +42,52 @@
       <p style="color: var(--color-gray-dark); margin-bottom: var(--spacer-lg);">
         Please fill in your details below to complete the reservation.
       </p>
-
       <div class="contact-form">
         <form id="bookingForm" action="#" method="POST">
-          <!-- Selected Car (Dropdown) -->
           <div class="form-group">
             <label for="selectedCar">Selected Car</label>
-            <select
-                    id="selectedCar"
-                    name="selectedCar"
-                    required
-                    style="
-                  width: 100%;
-                  padding: var(--spacer-xs) var(--spacer-sm);
-                  border: 1px solid var(--color-gray-medium);
-                  border-radius: var(--radius-sm);
-                  font-size: var(--font-size-md);
-                  background: #fff;
-                "
-            >
+            <select id="selectedCar" name="selectedCar" required
+                    style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);background:#fff;">
               <option value="" disabled selected>-- Choose a car --</option>
               <option value="Toyota Prius Hybrid">Toyota Prius Hybrid</option>
               <option value="Skoda Fabia (Black)">Skoda Fabia (Black)</option>
               <option value="Skoda Fabia (Red)">Skoda Fabia (Red)</option>
             </select>
           </div>
-
-          <!-- Name -->
           <div class="form-group">
             <label for="name">Name</label>
-            <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="Your Full Name"
-                    style="
-                  width: 100%;
-                  padding: var(--spacer-xs) var(--spacer-sm);
-                  border: 1px solid var(--color-gray-medium);
-                  border-radius: var(--radius-sm);
-                  font-size: var(--font-size-md);
-                "
-            />
+            <input type="text" id="name" name="name" required placeholder="Your Full Name"
+                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
           </div>
-
-          <!-- Email Address -->
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="you@example.com"
-                    style="
-                  width: 100%;
-                  padding: var(--spacer-xs) var(--spacer-sm);
-                  border: 1px solid var(--color-gray-medium);
-                  border-radius: var(--radius-sm);
-                  font-size: var(--font-size-md);
-                "
-            />
+            <input type="email" id="email" name="email" required placeholder="you@example.com"
+                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
           </div>
-
-          <!-- Phone Number -->
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    placeholder="+1 (555) 123-4567"
-                    style="
-                  width: 100%;
-                  padding: var(--spacer-xs) var(--spacer-sm);
-                  border: 1px solid var(--color-gray-medium);
-                  border-radius: var(--radius-sm);
-                  font-size: var(--font-size-md);
-                "
-            />
+            <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567"
+                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
           </div>
-
-          <!-- Pick-up Date & Time -->
           <div class="form-group">
             <label for="pickupDate">Pick-up Date & Time</label>
-            <input
-                    type="datetime-local"
-                    id="pickupDate"
-                    name="pickupDate"
-                    required
-                    style="
-                  width: 100%;
-                  padding: var(--spacer-xs) var(--spacer-sm);
-                  border: 1px solid var(--color-gray-medium);
-                  border-radius: var(--radius-sm);
-                  font-size: var(--font-size-md);
-                "
-            />
+            <input type="datetime-local" id="pickupDate" name="pickupDate" required
+                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
           </div>
-
-          <!-- Drop-off Date & Time -->
           <div class="form-group">
             <label for="dropoffDate">Drop-off Date & Time</label>
-            <input
-                    type="datetime-local"
-                    id="dropoffDate"
-                    name="dropoffDate"
-                    required
-                    style="
-                  width: 100%;
-                  padding: var(--spacer-xs) var(--spacer-sm);
-                  border: 1px solid var(--color-gray-medium);
-                  border-radius: var(--radius-sm);
-                  font-size: var(--font-size-md);
-                "
-            />
+            <input type="datetime-local" id="dropoffDate" name="dropoffDate" required
+                   style="width:100%;padding:var(--spacer-xs) var(--spacer-sm);border:1px solid var(--color-gray-medium);border-radius:var(--radius-sm);font-size:var(--font-size-md);" />
           </div>
-
-          <button type="submit" class="btn btn-primary">
-            Confirm Booking
-          </button>
+          <button type="submit" class="btn btn-primary">Confirm Booking</button>
         </form>
       </div>
     </div>
   </section>
 </main>
 
-<!-- ===== TOAST NOTIFICATION ===== -->
-<!-- style.css içindeki #success-message tanımı mevcut olmalı -->
 <div id="success-message">Booking confirmed!</div>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container footer-container">
     <p>&copy; 2025 XDrive. All rights reserved.</p>
@@ -204,32 +101,16 @@
   </div>
 </footer>
 
-<!-- ===== JAVASCRIPT ===== -->
 <script>
-  // Sayfa tamamen yüklendiğinde
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("bookingForm");
     const toast = document.getElementById("success-message");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); // Formun gerçek gönderimini engelle
-
-      // Burada istersen az miktar validasyon yapabilirsin.
-      // Örneğin tüm alanların dolu olduğundan emin olmak vb.
-      // Fakat "required" zaten HTML tarafında kontrol ediyor.
-
-      // 1) Toast bildirimi göster
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
       toast.classList.add("show");
-
-      // 2) Kısa süre sonra toast mesajını gizle
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 3000); // 3 saniye gösterip sonra gizle
-
-      // 3) Form alanlarını temizle (opsiyonel)
+      setTimeout(() => toast.classList.remove("show"), 3000);
       form.reset();
     });
   });
 </script>
-</body>
-</html>
