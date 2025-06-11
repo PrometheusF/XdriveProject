@@ -1,819 +1,127 @@
-:root {
-    --color-primary: #ff0000;
-    --color-primary-alt: #e60000;
-    --color-secondary: #1a73e8;
-    --color-gray-light: #f5f7fa;
-    --color-gray-medium: #ced4da;
-    --color-gray-dark: #495057;
-    --color-black: #212529;
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Lato', sans-serif;
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-md: 1rem;
-    --font-size-lg: 1.25rem;
-    --font-size-xl: 2rem;
-    --line-height: 1.6;
-    --spacer-xxs: 0.25rem;
-    --spacer-xs: 0.5rem;
-    --spacer-sm: 1rem;
-    --spacer-md: 1.5rem;
-    --spacer-lg: 2rem;
-    --spacer-xl: 3rem;
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
-    --shadow-light: 0 2px 8px rgba(0,0,0,0.05);
-    --shadow-medium: 0 4px 16px rgba(0,0,0,0.1);
-    --shadow-heavy: 0 8px 32px rgba(0,0,0,0.2);
-    --transition-fast: 0.2s ease-in-out;
-    --transition-medium: 0.4s ease-in-out;
-    --transition-slow: 0.6s ease-in-out;
-}
+// ==== 1. Mobil Menü Toggle ====
+document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const navbar = document.getElementById("navbar");
+    const closeBtn = document.getElementById('close-btn');
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 100%;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--font-body);
-    font-size: var(--font-size-md);
-    line-height: var(--line-height);
-    color: var(--color-black);
-    background-color: var(--color-gray-light);
-    overflow-x: hidden;
-    padding-top: 80px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-img, video {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacer-sm);
-}
-
-.section-title {
-    font-family: var(--font-heading);
-    font-size: var(--font-size-xl);
-    color: var(--color-primary);
-    margin-bottom: var(--spacer-sm);
-    position: relative;
-    display: inline-block;
-}
-.section-title::after {
-    content: "";
-    position: absolute;
-    bottom: -0.5rem;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: var(--color-secondary);
-    border-radius: var(--radius-sm);
-}
-
-.btn {
-    display: inline-block;
-    background: var(--color-primary);
-    color: var(--color-gray-light);
-    padding: var(--spacer-xs) var(--spacer-md);
-    border-radius: var(--radius-md);
-    font-size: var(--font-size-md);
-    font-weight: 500;
-    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-    box-shadow: var(--shadow-light);
-}
-.btn:hover {
-    background: var(--color-primary-alt);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-}
-.btn-secondary:hover {
-    background: var(--color-primary);
-    color: var(--color-gray-light);
-}
-
-.grid { display: grid; gap: var(--spacer-lg); }
-.grid-2 { grid-template-columns: repeat(2,1fr); }
-.grid-3 { grid-template-columns: repeat(3,1fr); }
-
-.header {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(8px);
-    box-shadow: var(--shadow-light);
-    z-index: 1000;
-    transition: background var(--transition-fast), box-shadow var(--transition-fast);
-}
-.header.scrolled {
-    background: var(--color-gray-light);
-    box-shadow: var(--shadow-medium);
-}
-.header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--spacer-xs) 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: var(--spacer-xs);
-}
-.logo-img {
-    height: 56px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-}
-.logo-text {
-    font-family: var(--font-heading);
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    color: var(--color-black);
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: var(--spacer-lg);
-}
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: var(--spacer-lg);
-}
-.nav-links li a {
-    position: relative;
-    font-size: var(--font-size-md);
-    font-weight: 500;
-    color: var(--color-gray-dark);
-    padding: var(--spacer-xxs) 0;
-    transition: color var(--transition-fast);
-}
-.nav-links li a:hover,
-.nav-links li a.active {
-    color: var(--color-primary);
-}
-.nav-links li a::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-primary);
-    transition: width var(--transition-fast);
-}
-.nav-links li a:hover::after,
-.nav-links li a.active::after {
-    width: 100%;
-}
-
-.header-icons {
-    display: flex;
-    align-items: center;
-    gap: var(--spacer-sm);
-}
-.header-icons i {
-    font-size: var(--font-size-lg);
-    color: var(--color-gray-dark);
-    transition: color var(--transition-fast);
-}
-.header-icons i:hover {
-    color: var(--color-primary);
-}
-
-#menu-btn {
-    display: none;
-    font-size: 1.5rem;
-    color: var(--color-gray-dark);
-    cursor: pointer;
-}
-
-.home {
-    margin-top: 80px;
-    position: relative;
-    height: calc(100vh - 80px);
-    background: url('../assets/images/carkey.png') center/cover no-repeat fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.home::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-}
-.home-container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: var(--color-gray-light);
-    max-width: 800px;
-    padding: 0 var(--spacer-sm);
-}
-.home-container h1 {
-    font-family: var(--font-heading);
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacer-sm);
-    animation: fadeInDown 1s ease-out;
-}
-.home-container p {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacer-sm);
-    opacity: 0.9;
-    animation: fadeInUp 1s ease-out 0.3s;
-}
-.home-container .btn {
-    font-size: var(--font-size-md);
-    animation: fadeInUp 1s ease-out 0.6s;
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-.about,
-.services-preview,
-.services,
-.contact,
-.rent {
-    background-color: var(--color-gray-light);
-    padding-top: var(--spacer-lg);
-    padding-bottom: var(--spacer-lg);
-}
-
-.about-content,
-.services-grid,
-.rent-grid,
-.contact-container {
-    display: grid;
-    gap: var(--spacer-lg);
-}
-
-.about-content {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: center;
-}
-
-.about-image {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-medium);
-}
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-medium);
-}
-.about-image:hover img {
-    transform: scale(1.05);
-}
-
-.about-text h2 {
-    font-family: var(--font-heading);
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacer-sm);
-    color: var(--color-primary);
-}
-.about-text p {
-    font-size: var(--font-size-md);
-    color: var(--color-gray-dark);
-    margin-bottom: var(--spacer-sm);
-}
-
-.services-preview .section-title,
-.services .section-title {
-    text-align: center;
-    margin-bottom: var(--spacer-lg);
-}
-.services-preview p {
-    font-size: var(--font-size-md);
-    text-align: center;
-    color: var(--color-gray-dark);
-    margin-bottom: var(--spacer-sm);
-}
-.services-preview .btn {
-    display: block;
-    margin: 0 auto;
-}
-
-.services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-.service-card {
-    background-color: var(--color-gray-light);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-light);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
-}
-.card-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-medium);
-}
-.service-card:hover .card-image img {
-    transform: scale(1.05);
-}
-.card-content {
-    padding: var(--spacer-sm);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-.card-content h3 {
-    font-family: var(--font-heading);
-    font-size: var(--font-size-lg);
-    color: var(--color-primary);
-    margin-bottom: var(--spacer-xs);
-}
-.card-content p {
-    flex: 1;
-    font-size: var(--font-size-md);
-    color: var(--color-gray-dark);
-    margin-bottom: var(--spacer-sm);
-}
-
-.contact-info {
-    text-align: center;
-}
-.contact-info p {
-    font-size: var(--font-size-md);
-    color: var(--color-gray-dark);
-    margin-bottom: var(--spacer-xxs);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacer-xxs);
-}
-.contact-info i {
-    color: var(--color-primary);
-    font-size: var(--font-size-lg);
-}
-
-/* ==============================
-   MAP CONTAINER – BOYUT AYARI
-   ============================== */
-.map-container {
-    /* İsterseniz en fazla genişlik de koyabilirsiniz */
-    width: 100%;
-    max-width: 800px;    /* isteğe bağlı, haritanın çok geniş olmaması için */
-    margin: 0 auto;      /* ortaya hizalama */
-    border-radius: var(--radius-lg);
-    overflow: hidden;    /* köşeleri korumak için */
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 300px;       /* harita yüksekliğini 300px’e düşürdük */
-    border: none;
-}
-
-
-.contact-form {
-    background-color: var(--color-gray-light);
-    padding: var(--spacer-sm);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-light);
-
-    width: 100%;
-    max-width: 600px;
-    /* Eskisi: margin: var(--spacer-lg) auto; */
-    margin: var(--spacer-md) auto; /* Üst boşluğu küçülttük */
-}
-
-@media (min-width: 1200px) {
-    .contact-form {
-        max-width: 800px;
+    if (menuBtn && navbar) {
+        menuBtn.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+        });
     }
-}
+    closeBtn.addEventListener('click', () => {
+        navbar.classList.remove('active');
+    });
+});
 
-.contact-form .form-group {
-    margin-bottom: var(--spacer-sm);
-}
-.contact-form .form-group label {
-    display: block;
-    margin-bottom: var(--spacer-xs);
-    font-weight: 500;
-    color: var(--color-gray-dark);
-}
-.contact-form .form-group input,
-.contact-form .form-group textarea,
-.contact-form .form-group select {
-    width: 100%;
-    padding: var(--spacer-xs) var(--spacer-sm);
-    border: 1px solid var(--color-gray-medium);
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-md);
-    background: #fff;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-.contact-form .form-group input:focus,
-.contact-form .form-group textarea:focus,
-.contact-form .form-group select:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(255,0,0,0.2);
-}
-.contact-form .btn {
-    margin-top: var(--spacer-sm);
-}
+// ==== 2. Scroll-Reveal Animasyonları ====
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll("[data-anim]");
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15,
+    };
+    const revealOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+                revealOnScroll.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-#success-message {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--color-primary);
-    color: var(--color-gray-light);
-    padding: var(--spacer-xs) var(--spacer-lg);
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-medium);
-    font-size: var(--font-size-sm);
-    opacity: 0;
-    transition: opacity var(--transition-fast), bottom var(--transition-fast);
-    z-index: 1000;
-}
-#success-message.show {
-    display: block;
-    bottom: 60px;
-    opacity: 1;
-}
+    animatedElements.forEach((el) => {
+        revealOnScroll.observe(el);
+        const delay = el.getAttribute("data-delay");
+        if (delay) {
+            el.style.transitionDelay = delay + "ms";
+        }
+    });
+});
 
-.footer {
-    background-color: var(--color-black);
-    color: var(--color-gray-light);
-    padding: var(--spacer-sm) 0;
-}
-.footer-container {
-    text-align: center;
-}
-.footer p {
-    font-size: var(--font-size-xs);
-    margin-bottom: var(--spacer-xs);
-}
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacer-xxs);
-}
-.footer-links a {
-    font-size: var(--font-size-sm);
-    color: var(--color-gray-light);
-    transition: opacity var(--transition-fast);
-}
-.footer-links a:hover {
-    opacity: 0.7;
-}
+// ==== 3. Contact + Rent Form Gönderimi ve Toast Bildirimi ====
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("success-message");
 
-#back-to-top {
-    position: fixed;
-    bottom: var(--spacer-xl);
-    right: var(--spacer-xl);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-primary);
-    color: var(--color-gray-light);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    transition: background var(--transition-fast), transform var(--transition-fast);
-    z-index: 1000;
-}
-#back-to-top::before {
-    content: '↑';
-    font-size: 1.5rem;
-    line-height: 1;
-}
-#back-to-top:hover {
-    background: var(--color-primary-alt);
-    transform: translateY(-2px);
-}
+    if (!form) return;
 
-.language-select {
-    margin-left: var(--spacer-sm);
-}
-.language-select select {
-    padding: var(--spacer-xxs) var(--spacer-sm);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--color-gray-medium);
-    background: #fff;
-    font-size: var(--font-size-sm);
-}
-@media (min-width:1199px){
-    #close-btn {
-        display: none;
-    }
-}
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-@media (max-width:1199px) {
-    .about-content,
-    .services-grid,
-    .rent-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-    #menu-btn {
-        display: block;
-    }
-    #close-btn {
-        color: var(--color-gray-dark);
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        font-size: 2rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1002;
+        const formData = new FormData(form);
+        const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            message: formData.get("message"),
+        };
+
+        fetch("http://localhost:5000/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.success) {
+                    successMessage.classList.add("show");
+                    setTimeout(() => {
+                        successMessage.classList.remove("show");
+                    }, 3000);
+                    form.reset();
+                } else {
+                    alert("Error: " + result.message);
+                }
+            })
+            .catch((err) => {
+                console.error("Request error:", err);
+                alert("Error sending message.");
+            });
+    });
+});
+
+// ==== 4. Back to Top Butonu ====
+document.addEventListener("DOMContentLoaded", () => {
+    const backToTopBtn = document.getElementById("back-to-top");
+
+    if (!backToTopBtn) return;
+
+    window.addEventListener("scroll", () => {
+        backToTopBtn.style.display = window.pageYOffset > 300 ? "block" : "none";
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
+
+// ==== 5. Light/Dark Mode Toggle + Tercih Kaydı ====
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("theme-toggle");
+
+    if (!toggleBtn) return;
+
+    // Sayfa yüklendiğinde mevcut tema uygulanır
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+    } else {
+        toggleBtn.textContent = "🌙";
     }
 
-    .navbar {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 300px;
-        background: var(--color-gray-light);
-        flex-direction: column;
-        padding-top: var(--spacer-xl);
-        box-shadow: var(--shadow-medium);
-        transition: right var(--transition-fast);
-    }
-    .navbar.active {
-        right: 0;
-    }
-    .nav-links {
-        flex-direction: column;
-        gap: var(--spacer-md);
-        padding-left: var(--spacer-md);
-    }
-    .header-icons {
-        display: none;
-    }
-    .header-icons{display:flex;align-items:center;gap:var(--spacer-sm);}
-    .header-icons>:not(#theme-toggle){display:none;}
-}
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
 
-@media (max-width:991px) {
-    .home {
-        height: 400px;
-    }
-    .home-container h1 {
-        font-size: var(--font-size-lg);
-    }
-    .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    #menu-btn {
-        display: block;
-    }
-}
-
-@media (max-width:767px) {
-    .home {
-        height: 300px;
-    }
-    .home-container h1 {
-        font-size: var(--font-size-md);
-    }
-    .services-grid,
-    .rent-grid {
-        grid-template-columns: 1fr;
-    }
-    .about-text p {
-        font-size: var(--font-size-sm);
-    }
-    .footer-links {
-        flex-direction: column;
-        gap: var(--spacer-xxs);
-    }
-    #menu-btn {
-        display: block;
-    }
-}
-
-/* === Dark Mode Değişkenleri === */
-* {
-    body.dark-mode {
-        --color-black: #f1f1f1;
-        --color-gray-light: #1e1e1e;
-        --color-gray-medium: #444;
-        --color-gray-dark: #ccc;
-        --shadow-light: 0 2px 8px rgba(255, 255, 255, 0.05);
-        --shadow-medium: 0 4px 16px rgba(255, 255, 255, 0.1);
-        --shadow-heavy: 0 8px 32px rgba(255, 255, 255, 0.2);
-        background-color: var(--color-gray-light);
-        color: var(--color-black);
-    }
-    body.dark #close-btn {
-        color: var(--color-gray-dark);
-        --color-primary: var(--color-gray-light);
-    }
-
-    body.dark-mode .header {
-        background-color: rgba(30, 30, 30, 0.9);
-    }
-
-    body.dark-mode .footer {
-        background-color: #000;
-        color: #eee;
-    }
-
-    body.dark-mode .btn-secondary {
-        border-color: var(--color-gray-dark);
-        color: var(--color-gray-dark);
-    }
-
-    body.dark-mode .btn-secondary:hover {
-        background: var(--color-gray-dark);
-        color: var(--color-gray-light);
-    }
-
-    body.dark-mode .contact-form {
-        background-color: #2a2a2a;
-    }
-
-    #theme-toggle {
-        font-size: 1.2rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--color-gray-dark);
-        transition: color 0.3s;
-    }
-
-    body.dark-mode #theme-toggle {
-        color: var(--color-gray-dark);
-    }
-
-    body.dark-mode .home-container,
-    body.dark-mode .home-container h1,
-    body.dark-mode .home-container p {
-        color: #f1f1f1;
-    }
-}
-
-/* === Mobil Hamburger Menü === */
-@media (max-width: 768px) {
-    .navbar {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 250px;
-        height: 70vh;
-        background: var(--color-gray-light);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: right 0.3s ease-in-out;
-        z-index: 1001;
-    }
-
-    .navbar.active {
-        right: 0;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: var(--spacer-md);
-    }
-
-    #menu-btn {
-        display: block;
-    }
-
-    .header-icons{display:flex;align-items:center;gap:var(--spacer-sm);}
-    .header-icons>*:not(#theme-toggle){display:none;}
-}
-
-
-/* === Dark Mode: Navbar ve Yazılar === */
-body.dark-mode .nav-links li a {
-    color: #f1f1f1;
-}
-body.dark-mode .nav-links li a:hover,
-body.dark-mode .nav-links li a.active {
-    color: var(--color-primary);
-}
-body.dark-mode .home-container,
-body.dark-mode .home-container h1,
-body.dark-mode .home-container p {
-    color: #f1f1f1;
-}
-
-/* ==============================
-   CONTACT PREVIEW – TIKLANABİLİR LINKLER
-   ============================== */
-.contact-info {
-    text-align: center; /* Mevcut zaten var ise atlayın */
-}
-
-.contact-info p {
-    /* Biraz daha hava için alt boşluk */
-    margin: var(--spacer-xs) 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacer-xxs);
-}
-
-/* Telefon ve e-posta linklerinin stili */
-.contact-info p a {
-    color: var(--color-primary);           /* Veya istediğiniz renk */
-    text-decoration: none;
-    border-bottom: 1px solid var(--color-primary);
-    padding-bottom: 2px;
-    transition: opacity var(--transition-fast);
-}
-
-.contact-info p a:hover {
-    opacity: 0.7;
-}
-
-/* ==============================
-   SEND A MESSAGE BUTONU İÇİN
-   ============================== */
-/* contact-action sınıfını HTML’e eklediğinizi varsayıyorum */
-.contact-action {
-    margin-top: var(--spacer-md);
-}
-
-/* Eğer btn-secondary’niz zaten varsa, aşağıdakiler opsiyonel */
-.btn-secondary {
-    display: inline-block;
-    padding: var(--spacer-xs) var(--spacer-md);
-    background: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-md);
-    font-weight: 500;
-    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
-}
-
-.btn-secondary:hover {
-    background: var(--color-primary);
-    color: var(--color-gray-light);
-    transform: translateY(-2px);
-}
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        }
+    });
+});
