@@ -1,13 +1,17 @@
 // ==== 1. Mobil Menü Toggle ====
 document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.getElementById("menu-btn");
-    const navbar = document.getElementById("navbar"); // .navbar yerine id varsa daha güvenli
+    const navbar = document.getElementById("navbar");
+    const closeBtn = document.getElementById('close-btn');
 
     if (menuBtn && navbar) {
         menuBtn.addEventListener("click", () => {
             navbar.classList.toggle("active");
         });
     }
+    closeBtn.addEventListener('click', () => {
+        navbar.classList.remove('active');
+    });
 });
 
 // ==== 2. Scroll-Reveal Animasyonları ====
