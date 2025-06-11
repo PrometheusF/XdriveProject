@@ -409,21 +409,43 @@ button {
     font-size: var(--font-size-lg);
 }
 
-.map-container,
-.footer-links {
+/* ==============================
+   MAP CONTAINER – BOYUT AYARI
+   ============================== */
+.map-container {
+    /* İsterseniz en fazla genişlik de koyabilirsiniz */
+    width: 100%;
+    max-width: 800px;    /* isteğe bağlı, haritanın çok geniş olmaması için */
+    margin: 0 auto;      /* ortaya hizalama */
     border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-medium);
+    overflow: hidden;    /* köşeleri korumak için */
 }
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;       /* harita yüksekliğini 300px’e düşürdük */
+    border: none;
+}
+
 
 .contact-form {
     background-color: var(--color-gray-light);
     padding: var(--spacer-sm);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-light);
+
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto;
+    /* Eskisi: margin: var(--spacer-lg) auto; */
+    margin: var(--spacer-md) auto; /* Üst boşluğu küçülttük */
 }
+
+@media (min-width: 1200px) {
+    .contact-form {
+        max-width: 800px;
+    }
+}
+
 .contact-form .form-group {
     margin-bottom: var(--spacer-sm);
 }
@@ -740,3 +762,58 @@ body.dark-mode .home-container p {
     color: #f1f1f1;
 }
 
+/* ==============================
+   CONTACT PREVIEW – TIKLANABİLİR LINKLER
+   ============================== */
+.contact-info {
+    text-align: center; /* Mevcut zaten var ise atlayın */
+}
+
+.contact-info p {
+    /* Biraz daha hava için alt boşluk */
+    margin: var(--spacer-xs) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacer-xxs);
+}
+
+/* Telefon ve e-posta linklerinin stili */
+.contact-info p a {
+    color: var(--color-primary);           /* Veya istediğiniz renk */
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: 2px;
+    transition: opacity var(--transition-fast);
+}
+
+.contact-info p a:hover {
+    opacity: 0.7;
+}
+
+/* ==============================
+   SEND A MESSAGE BUTONU İÇİN
+   ============================== */
+/* contact-action sınıfını HTML’e eklediğinizi varsayıyorum */
+.contact-action {
+    margin-top: var(--spacer-md);
+}
+
+/* Eğer btn-secondary’niz zaten varsa, aşağıdakiler opsiyonel */
+.btn-secondary {
+    display: inline-block;
+    padding: var(--spacer-xs) var(--spacer-md);
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-secondary:hover {
+    background: var(--color-primary);
+    color: var(--color-gray-light);
+    transform: translateY(-2px);
+}
