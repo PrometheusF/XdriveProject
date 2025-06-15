@@ -1,3 +1,4 @@
+/* Variables */
 :root {
     --color-primary: #ff0000;
     --color-primary-alt: #e60000;
@@ -31,12 +32,14 @@
     --transition-slow: 0.6s ease-in-out;
 }
 
+/* Reset */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Base */
 html {
     font-size: 100%;
     scroll-behavior: smooth;
@@ -74,6 +77,7 @@ button {
     font-family: inherit;
 }
 
+/* Layout */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -81,6 +85,7 @@ button {
     padding: 0 var(--spacer-sm);
 }
 
+/* Typography & Components */
 .section-title {
     font-family: var(--font-heading);
     font-size: var(--font-size-xl);
@@ -131,6 +136,7 @@ button {
 .grid-2 { grid-template-columns: repeat(2,1fr); }
 .grid-3 { grid-template-columns: repeat(3,1fr); }
 
+/* Header */
 .header {
     position: fixed;
     top: 0; left: 0;
@@ -226,6 +232,7 @@ button {
     cursor: pointer;
 }
 
+/* Home Section */
 .home {
     margin-top: 80px;
     position: relative;
@@ -275,6 +282,7 @@ button {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Other Sections */
 .about,
 .services-preview,
 .services,
@@ -409,55 +417,47 @@ button {
     font-size: var(--font-size-lg);
 }
 
-/* ==============================
-   MAP CONTAINER – BOYUT AYARI
-   ============================== */
+/* Map container */
 .map-container {
-    /* İsterseniz en fazla genişlik de koyabilirsiniz */
     width: 100%;
-    max-width: 800px;    /* isteğe bağlı, haritanın çok geniş olmaması için */
-    margin: 0 auto;      /* ortaya hizalama */
+    max-width: 800px;
+    margin: 0 auto;
     border-radius: var(--radius-lg);
-    overflow: hidden;    /* köşeleri korumak için */
+    overflow: hidden;
 }
-
 .map-container iframe {
     width: 100%;
-    height: 300px;       /* harita yüksekliğini 300px’e düşürdük */
+    height: 300px;
     border: none;
 }
 
-
+/* Contact form */
 .contact-form {
     background-color: var(--color-gray-light);
     padding: var(--spacer-sm);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-light);
-
     width: 100%;
     max-width: 600px;
-    /* Eskisi: margin: var(--spacer-lg) auto; */
-    margin: var(--spacer-md) auto; /* Üst boşluğu küçülttük */
+    margin: var(--spacer-md) auto;
 }
-
 @media (min-width: 1200px) {
     .contact-form {
         max-width: 800px;
     }
 }
-
 .contact-form .form-group {
     margin-bottom: var(--spacer-sm);
 }
-.contact-form .form-group label {
+.contact-form label {
     display: block;
     margin-bottom: var(--spacer-xs);
     font-weight: 500;
     color: var(--color-gray-dark);
 }
-.contact-form .form-group input,
-.contact-form .form-group textarea,
-.contact-form .form-group select {
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
     width: 100%;
     padding: var(--spacer-xs) var(--spacer-sm);
     border: 1px solid var(--color-gray-medium);
@@ -466,9 +466,9 @@ button {
     background: #fff;
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
-.contact-form .form-group input:focus,
-.contact-form .form-group textarea:focus,
-.contact-form .form-group select:focus {
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(255,0,0,0.2);
@@ -477,6 +477,7 @@ button {
     margin-top: var(--spacer-sm);
 }
 
+/* Success message */
 #success-message {
     display: none;
     position: fixed;
@@ -499,6 +500,7 @@ button {
     opacity: 1;
 }
 
+/* Footer */
 .footer {
     background-color: var(--color-black);
     color: var(--color-gray-light);
@@ -525,6 +527,7 @@ button {
     opacity: 0.7;
 }
 
+/* Back to top */
 #back-to-top {
     position: fixed;
     bottom: var(--spacer-xl);
@@ -550,6 +553,7 @@ button {
     transform: translateY(-2px);
 }
 
+/* Language select */
 .language-select {
     margin-left: var(--spacer-sm);
 }
@@ -560,12 +564,13 @@ button {
     background: #fff;
     font-size: var(--font-size-sm);
 }
+
+/* Responsive tweaks */
 @media (min-width:1199px){
     #close-btn {
         display: none;
     }
 }
-
 @media (max-width:1199px) {
     .about-content,
     .services-grid,
@@ -586,7 +591,6 @@ button {
         cursor: pointer;
         z-index: 1002;
     }
-
     .navbar {
         position: fixed;
         top: 0;
@@ -613,7 +617,6 @@ button {
     .header-icons{display:flex;align-items:center;gap:var(--spacer-sm);}
     .header-icons>:not(#theme-toggle){display:none;}
 }
-
 @media (max-width:991px) {
     .home {
         height: 400px;
@@ -629,7 +632,6 @@ button {
         display: block;
     }
 }
-
 @media (max-width:767px) {
     .home {
         height: 300px;
@@ -653,108 +655,46 @@ button {
     }
 }
 
-/* === Dark Mode Değişkenleri === */
-* {
-    body.dark-mode {
-        --color-black: #f1f1f1;
-        --color-gray-light: #1e1e1e;
-        --color-gray-medium: #444;
-        --color-gray-dark: #ccc;
-        --shadow-light: 0 2px 8px rgba(255, 255, 255, 0.05);
-        --shadow-medium: 0 4px 16px rgba(255, 255, 255, 0.1);
-        --shadow-heavy: 0 8px 32px rgba(255, 255, 255, 0.2);
-        background-color: var(--color-gray-light);
-        color: var(--color-black);
-    }
-    body.dark #close-btn {
-        color: var(--color-gray-dark);
-        --color-primary: var(--color-gray-light);
-    }
-
-    body.dark-mode .header {
-        background-color: rgba(30, 30, 30, 0.9);
-    }
-
-    body.dark-mode .footer {
-        background-color: #000;
-        color: #eee;
-    }
-
-    body.dark-mode .btn-secondary {
-        border-color: var(--color-gray-dark);
-        color: var(--color-gray-dark);
-    }
-
-    body.dark-mode .btn-secondary:hover {
-        background: var(--color-gray-dark);
-        color: var(--color-gray-light);
-    }
-
-    body.dark-mode .contact-form {
-        background-color: #2a2a2a;
-    }
-
-    #theme-toggle {
-        font-size: 1.2rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--color-gray-dark);
-        transition: color 0.3s;
-    }
-
-    body.dark-mode #theme-toggle {
-        color: var(--color-gray-dark);
-    }
-
-    body.dark-mode .home-container,
-    body.dark-mode .home-container h1,
-    body.dark-mode .home-container p {
-        color: #f1f1f1;
-    }
+/* Dark Mode */
+body.dark-mode {
+    --color-black: #f1f1f1;
+    --color-gray-light: #1e1e1e;
+    --color-gray-medium: #444;
+    --color-gray-dark: #ccc;
+    --shadow-light: 0 2px 8px rgba(255, 255, 255, 0.05);
+    --shadow-medium: 0 4px 16px rgba(255, 255, 255, 0.1);
+    --shadow-heavy: 0 8px 32px rgba(255, 255, 255, 0.2);
+    background-color: var(--color-gray-light);
+    color: var(--color-black);
 }
-
-/* === Mobil Hamburger Menü === */
-@media (max-width: 768px) {
-    .navbar {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 250px;
-        height: 70vh;
-        background: var(--color-gray-light);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: right 0.3s ease-in-out;
-        z-index: 1001;
-    }
-
-    .navbar.active {
-        right: 0;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: var(--spacer-md);
-    }
-
-    #menu-btn {
-        display: block;
-    }
-
-    .header-icons{display:flex;align-items:center;gap:var(--spacer-sm);}
-    .header-icons>*:not(#theme-toggle){display:none;}
+body.dark-mode .header {
+    background-color: rgba(30, 30, 30, 0.9);
 }
-
-
-/* === Dark Mode: Navbar ve Yazılar === */
-body.dark-mode .nav-links li a {
-    color: #f1f1f1;
+body.dark-mode .footer {
+    background-color: #000;
+    color: #eee;
 }
-body.dark-mode .nav-links li a:hover,
-body.dark-mode .nav-links li a.active {
-    color: var(--color-primary);
+body.dark-mode .btn-secondary {
+    border-color: var(--color-gray-dark);
+    color: var(--color-gray-dark);
+}
+body.dark-mode .btn-secondary:hover {
+    background: var(--color-gray-dark);
+    color: var(--color-gray-light);
+}
+body.dark-mode .contact-form {
+    background-color: #2a2a2a;
+}
+#theme-toggle {
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-gray-dark);
+    transition: color 0.3s;
+}
+body.dark-mode #theme-toggle {
+    color: var(--color-gray-dark);
 }
 body.dark-mode .home-container,
 body.dark-mode .home-container h1,
@@ -762,15 +702,11 @@ body.dark-mode .home-container p {
     color: #f1f1f1;
 }
 
-/* ==============================
-   CONTACT PREVIEW – TIKLANABİLİR LINKLER
-   ============================== */
+/* Contact preview tweaks */
 .contact-info {
-    text-align: center; /* Mevcut zaten var ise atlayın */
+    text-align: center;
 }
-
 .contact-info p {
-    /* Biraz daha hava için alt boşluk */
     margin: var(--spacer-xs) 0;
     display: flex;
     align-items: center;
@@ -778,42 +714,14 @@ body.dark-mode .home-container p {
     gap: var(--spacer-xxs);
 }
 
-/* Telefon ve e-posta linklerinin stili */
-.contact-info p a {
-    color: var(--color-primary);           /* Veya istediğiniz renk */
-    text-decoration: none;
-    border-bottom: 1px solid var(--color-primary);
-    padding-bottom: 2px;
-    transition: opacity var(--transition-fast);
-}
-
-.contact-info p a:hover {
-    opacity: 0.7;
-}
-
 /* ==============================
-   SEND A MESSAGE BUTONU İÇİN
+   Override contact-info links
    ============================== */
-/* contact-action sınıfını HTML’e eklediğinizi varsayıyorum */
-.contact-action {
-    margin-top: var(--spacer-md);
+.contact-info p a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: none;
 }
-
-/* Eğer btn-secondary’niz zaten varsa, aşağıdakiler opsiyonel */
-.btn-secondary {
-    display: inline-block;
-    padding: var(--spacer-xs) var(--spacer-md);
-    background: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-md);
-    font-weight: 500;
-    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
-}
-
-.btn-secondary:hover {
-    background: var(--color-primary);
-    color: var(--color-gray-light);
-    transform: translateY(-2px);
+.contact-info p a:hover {
+    opacity: 0.8;
 }
