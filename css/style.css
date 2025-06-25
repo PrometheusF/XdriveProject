@@ -718,7 +718,7 @@ body.dark-mode .home-container p {
    Override contact-info links
    ============================== */
 .contact-info p a {
-    color: #ffffff;
+    color: #f;
     text-decoration: none;
     border-bottom: none;
 }
